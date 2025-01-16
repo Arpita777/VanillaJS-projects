@@ -1,0 +1,76 @@
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures it stays above other content */
+  }
+  
+  /* Modal Content */
+  .modal {
+    background: #fff; /* White background for the modal */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    max-width: 500px; /* Maximum width */
+    width: 90%; /* Responsive width */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    position: relative; /* For positioning the close button */
+    animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in effect */
+  }
+  
+  /* Close Button */
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #999; /* Default color */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 50%; /* Round shape */
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+  }
+  
+  .modal-close:hover {
+    background: #666; /* Darker color on hover */
+  }
+  
+  /* Modal Title */
+  .modal h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333; /* Dark text color */
+  }
+  
+  /* Modal Paragraph */
+  .modal p {
+    font-size: 16px;
+    color: #555; /* Subtle text color */
+    line-height: 1.6;
+  }
+  .modal-open{
+    cursor: pointer;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
