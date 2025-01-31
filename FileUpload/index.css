@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+html{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    height: 100vh;
+    font-family: Montserrat, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.upload-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.dropZone{
+  text-align: center;
+  font-weight: 300;
+  border: 1px dotted #333 ;
+  padding: 50px 28px;
+  border-radius: 7px;
+}
+.dropZone.dragover {
+    border-color: #007bff;
+    background: #e3f2fd;
+}
+#upload-button,
+#save-button
+{
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    border-radius: 7px;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    background: rgb(22, 150, 241);
+    color: #fff;
+    border: none;
+}
+
+.fileList {
+    border: 1px dotted #333;
+    list-style-type: none;
+    border-radius: 7px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px; 
+}
+
+.fileList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 8px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.fileList li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    flex-grow: 1; 
+}
+
+.fileList li a:hover {
+    text-decoration: underline;
+}
+
+.removeFileButton {
+    color: rgb(203, 3, 3);
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+    margin-left: 10px; 
+}
+
+.toastMessage{
+    border: 0.5px black;
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 100px;
+    font-weight: 550;
+    visibility: hidden;
+    padding: 16px;
+  }
+  .toastMessage.show-success{
+    color: green;
+    visibility: visible;
+    animation: fadeInOut 2s ease-in-out;
+  }
+  .toastMessage.show-failure{
+    color: red;
+    visibility: visible;
+    animation: fadeInOut 2s ease-in-out;
+  }
+  @keyframes fadeInOut {
+    0% {opacity: 0;}
+    10% {opacity: 1;}
+    90% {opacity: 1;}
+    100% {opacity: 0;}
+  }

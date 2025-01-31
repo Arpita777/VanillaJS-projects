@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=css-tricks.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" >
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="toastMessage"></div>
+    <div class="upload-container">
+        <div class="dropZone">
+           <p>Drag and Drop Files Here</p>
+           <p>OR</p>
+           <button id="upload-button">Click here to Upload</button>
+        </div>
+        <input type="file" id="file-input" multiple accept=".jpg, .jpeg, .png" hidden/>
+        <ul class="fileList">
+            <li>No Files Uploaded !</li>
+        </ul>
+        <button id="save-button">Save</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
