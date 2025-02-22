@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <!-- <link rel="icon" type="image/png" href="favicon.png"> -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<body>
+    <h1 class="main-title">Kanban Board</h1>
+    <div class="board">
+        <div class="container">
+            <div class="column-title">Backlog</div>
+            <ul class="column-items custom-scroll" id="backlog-items">
+            </ul>
+            <div class="add-item-content">
+                <div class="input-wrapper">
+                    <div contenteditable="true" class="input-content"></div>
+                    <i class="fa-solid fa-circle-xmark close-icon"></i>
+                </div>
+                <button class="button-save-item">Save</button>
+            </div>
+            <div class="button-add-item">+ Add Item</div>
+        </div>
+        <div class="container ">
+            <div class="column-title">In Progress</div>
+            <ul class="column-items custom-scroll" id="progress-items">
+            </ul>
+            <div class="add-item-content">
+                <div class="input-wrapper">
+                    <div contenteditable="true" class="input-content"></div>
+                    <i class="fa-solid fa-circle-xmark close-icon"></i>
+                </div>
+                <button class="button-save-item">Save</button>
+            </div>
+            <div class="button-add-item">+ Add Item</div>
+        </div>
+        <div class="container">
+            <div class="column-title">Complete</div>
+            <ul class="column-items custom-scroll" id="complete-items" >
+            </ul>
+            <div class="add-item-content">
+                <div class="input-wrapper">
+                    <div contenteditable="true" class="input-content"></div>
+                    <i class="fa-solid fa-circle-xmark close-icon"></i>
+                </div>
+                <button class="button-save-item">Save</button>
+            </div>
+            <div class="button-add-item">+ Add Item</div>
+        </div>
+        <div class="container">
+            <div class="column-title">On Hold</div>
+            <ul class="column-items custom-scroll" id="hold-items" >
+            </ul>
+            <div class="add-item-content">
+                <div class="input-wrapper">
+                    <div contenteditable="true" class="input-content"></div>
+                    <i class="fa-solid fa-circle-xmark close-icon"></i>
+                </div>
+                <button class="button-save-item">Save</button>
+            </div>
+            <div class="button-add-item">+ Add Item</div>
+    
+        </div>
+    
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

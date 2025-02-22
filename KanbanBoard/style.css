@@ -1,0 +1,166 @@
+/* Trees Image - Pexels: https://www.pexels.com/photo/photo-of-trees-in-forest-3801030/ */
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+
+
+
+body {
+  margin: 0;
+  background: url("./trees.jpg");
+  background-size: cover;
+  background-position: 50% 60%;
+  background-attachment: fixed;
+  color: white;
+  font-family: Quicksand, sans-serif;
+  overflow-y: hidden;
+}
+
+h1 {
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px black;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.board{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.container{
+  border-radius: 7px;
+  padding: 1rem ;
+  min-width: 17rem;
+  background: rgba(0, 0, 0, 0.3);
+  transition: padding 0.2s ease;
+}
+.container:nth-of-type(1) .column-title,
+.container:nth-of-type(1) .over,
+.container:nth-of-type(1) .button-save-item{
+  background: #ee5909;
+}
+.container:nth-of-type(2) .column-title,
+.container:nth-of-type(2) .over,
+.container:nth-of-type(2) .button-save-item{
+  background: rgb(60, 2, 185);
+}
+.container:nth-of-type(3) .column-title,
+.container:nth-of-type(3) .over,
+.container:nth-of-type(3) .button-save-item{
+  background: rgb(10, 194, 10);
+}
+.container:nth-of-type(4) .column-title,
+.container:nth-of-type(4) .over,
+.container:nth-of-type(4) .button-save-item{
+  background: rgb(251, 20, 20);
+}
+
+
+
+.column-title{
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  padding: 0.5rem 1.5rem;
+  border-radius: 7px;
+  letter-spacing: 3px;
+  text-align: center;
+}
+.column-items{
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 10px;
+}
+.column-items li{
+  border-radius: 7px;
+  padding: 5px;
+  color: #fff;
+  background: #000;
+}
+.button-add-item,
+.button-save-item{
+  color: white;
+  cursor: pointer;
+  border-radius: 7px;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  border: none;
+  outline: none;
+}
+.button-add-item{
+  margin-top: 10px;
+}
+.button-add-item:hover{
+  background: #fff;
+  color: black;
+}
+.custom-scroll{
+  overflow-y: auto;
+  max-height: 52vh;
+}
+.add-item-content{
+  display: none;
+  gap: 15px;
+}
+.input-wrapper {
+  position: relative; 
+  display: inline-block;
+}
+.close-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 16px;
+  color: gray;
+  cursor: pointer;
+}
+.input-content{
+  width: 13rem;
+  background: #eee;
+  color: #000;
+  outline: none;
+  padding: 7px;
+  border-radius: 7px;
+  padding-right: 15px;
+}
+.over{
+  padding: 50px 10px;
+}
+
+.drag-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.delete-button{
+  cursor: pointer;
+  font-size: 15px;
+}
+.container:nth-of-type(1) .delete-button{
+ color: #ee5909;
+}
+.container:nth-of-type(2) .delete-button{
+  color: rgb(60, 2, 185);
+ }
+.container:nth-of-type(3) .delete-button{
+  color: rgb(10, 194, 10);
+ }
+.container:nth-of-type(4) .delete-button{
+  color: rgb(251, 20, 20);
+ }
+.faded{
+  opacity: 0.2;
+}
+.drag-item-text{
+  outline: none;
+}
