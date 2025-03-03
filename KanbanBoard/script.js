@@ -108,6 +108,37 @@ function createItemElement(column,content,columnNo,itemNo){
   column.appendChild(element);
 }
 
+function getDragAfterElement(container, y) {
+  const draggableElements = [...container.querySelectorAll('.drag-item:not(.faded)')];
+
+  return draggableElements.reduce(
+    (closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offset = y - (box.top + box.height / 2);
+      if (offset < 0 && offset > closest.offset) {
+        return { offset, element: child };
+      } else {
+        return closest;
+      }
+    },
+    { offset: Number.NEGATIVE_INFINITY, element: null }
+  ).element;
+}
+
+function insertIntoList(columnIndex, content, position) {
+  if (content.trim().length > 0) {
+    let list;
+    if (columnIndex === 0) list = backlogListArray;
+    if (columnIndex === 1) list = progressListArray;
+    if (columnIndex === 2) list = completeListArray;
+    if (columnIndex === 3) list = holdListArray;
+
+    list.splice(position, 0, content); 
+  }
+}
+
+
+
 function updateDOM(){
   if(!initialLoad){
     initialLoad = true;
@@ -163,7 +194,16 @@ closeTextBoxIcons.forEach((closeIcon,index) => {
 columnItems.forEach((columnItem,index) => {
   columnItem.addEventListener('dragover', event => {
     event.preventDefault();
-    columnItem.classList.add('over');
+    const afterElement = getDragAfterElement(columnItem, event.clientY);
+    if (afterElement) {
+      columnItem.insertBefore(draggedItem, afterElement);
+    } else {
+      columnItem.appendChild(draggedItem);
+    }
+    if(index !== draggedColumn){
+      columnItem.classList.add('over');
+    }
+   
   });
 
   columnItem.addEventListener('drop', event => {
@@ -171,11 +211,11 @@ columnItems.forEach((columnItem,index) => {
     columnItems.forEach((column) => {
       column.classList.remove('over');
     });
-    columnItem.appendChild(draggedItem);
     draggedItem.classList.remove('faded');
     deleteFromList(draggedColumn,draggedItemIndex);
+    const newPosition = [...columnItem.children].indexOf(draggedItem);
     const content = draggedItem.querySelector('.drag-item-text').textContent;
-    addToList(index,content);
+    insertIntoList(index, content, newPosition);
     saveToLocalStorage();
     updateDOM();
   });
